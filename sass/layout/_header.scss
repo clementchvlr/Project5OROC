@@ -10,6 +10,9 @@
         h2{
             font-size: 1rem;
         }
+        @include mobile-only{
+            align-items: center;
+        }
     }
     .nav-bar{
             display: flex;

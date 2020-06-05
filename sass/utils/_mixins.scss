@@ -1,0 +1,17 @@
+@mixin mobile-only { 
+    @media screen and (max-width: map-get($screen_size, mobile)){ 
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (max-width: map-get($screen_size, desktop)){
+        @content;
+    }  
+}
+
+@mixin tablette-only {
+    @media screen and (max-width: map-get($screen_size, tablette)){
+        @content;
+    }
+}
