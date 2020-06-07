@@ -5,15 +5,15 @@ function buildProduct(name, source, price) {
     var productName = document.createElement('h2'); productName.id = 'product-name';
     var productImage = document.createElement('img'); productImage.id = 'product-image';
     var productPrice = document.createElement('h4'); productPrice.id = 'product-price';
-    var button = document.createElement('button'); button.id = 'show-product';
+    var button = document.createElement('button'); button.id = 'show-product'; button.classList.add('btn-show');
 
     productName.innerHTML = name;
     productImage.src = source;
     productPrice.innerHTML = price + ' €' ;
     button.innerHTML = 'Voir le modèle'; 
 
-    product.appendChild(productName);
     product.appendChild(productImage);
+    product.appendChild(productName);
     product.appendChild(productPrice);
     product.appendChild(button);
 

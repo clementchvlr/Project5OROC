@@ -1,0 +1,28 @@
+#productsList{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
+    #product{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px;
+        #product-name{
+            padding: 10px 0;
+        }
+        #product-image{
+            max-width: 100%;
+            margin: 5px;
+        }
+        #product-price{
+            padding: 10px 0;
+    
+        }
+    }
+
+}
+
