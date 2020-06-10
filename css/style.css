@@ -16,19 +16,26 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; }
-  #productsList #product-item {
+  #productsList #product-in-sell {
     width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px; }
-    #productsList #product-item #product-name {
-      padding: 10px 0; }
-    #productsList #product-item #product-image {
-      max-width: 100%;
-      margin: 5px; }
-    #productsList #product-item #product-price {
-      padding: 10px 0; }
+    padding: 35px 0 0 0;
+    margin: 30px 0;
+    text-decoration: none;
+    background-color: #f0f0f0;
+    box-shadow: 0px 0px 8px 5px rgba(242, 239, 242, 0.7); }
+    #productsList #product-in-sell #product-name {
+      padding: 10px 0;
+      color: #000; }
+    #productsList #product-in-sell #product-price {
+      padding: 10px 0;
+      color: #000; }
+  #productsList .col-md-5 #product-image {
+    max-width: 100%; }
+  #productsList .col-xl-5 #product-image {
+    max-width: 80%; }
 
 .header .factory-name {
   display: flex;

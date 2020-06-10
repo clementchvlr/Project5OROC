@@ -1,4 +1,4 @@
-const custoProduct = async function () {
+/*const custoProduct = async function () {
     var getProducts = await fetch('http://localhost:3000/api/cameras');
     var products = await getProducts.json();
 
@@ -13,4 +13,6 @@ const custoProduct = async function () {
     }   
 }
 
-custoProduct();
+custoProduct();*/
+
+console.log(window.location.search);

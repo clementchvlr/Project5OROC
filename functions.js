@@ -22,9 +22,11 @@ function addPrice ( section , id , price ) {
     return productPrice;
 }
 
-function buidProductInSell (section, id, src, name, price) {
-    const productInSell = document.createElement('div');
+function buidProductInSell (section, id, src, name, price, idProduct) {
+    const productInSell = document.createElement('a');
+    productInSell.href = 'customize.html?' + idProduct;
     productInSell.id = id;
+    productInSell.classList.add("col-xl-5" , "col-md-5");
 
     addImage(productInSell, 'product-image', src)
     addName(productInSell, 'product-name', name);
