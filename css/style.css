@@ -37,6 +37,23 @@
   #productsList .col-xl-5 #product-image {
     max-width: 80%; }
 
+.factory-name a {
+  text-decoration: none;
+  color: #000; }
+
+#customization-of-product {
+  display: flex;
+  padding: 150px 0; }
+  #customization-of-product #product-custo-image #product-image {
+    max-width: 100%; }
+  #customization-of-product #product-custo-details {
+    display: flex;
+    flex-direction: column; }
+    #customization-of-product #product-custo-details #product-name {
+      padding: 50px 0; }
+    #customization-of-product #product-custo-details #lenses-select {
+      width: 15%; }
+
 .header .factory-name {
   display: flex;
   flex-direction: column;

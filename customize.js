@@ -1,18 +1,17 @@
-/*const custoProduct = async function () {
+const customizeYourProduct = async function () {
     var getProducts = await fetch('http://localhost:3000/api/cameras');
     var products = await getProducts.json();
 
-    var customizationProduct = document.getElementById('customizationProduct');
+    var customizationProduct = document.getElementById('customization-of-product');
+    
+    products.forEach(element => {
 
-    if ( window.location.search == '?' + 'firstLink') {
-        customizationProduct.innerHTML = 'bonjour';
-    } else if ( window.location.search == '?' + 'secondLink') {
-        customizationProduct.innerHTML = 'salut les amis';
-    } else {
-        console.log('produit pas trouvé');
-    }   
+        if ( '?' + element._id == window.location.search) {
+            buildProductToCustomize(customizationProduct, element.imageUrl, element.name, element.price, element.description, element.lenses);
+        } else {
+        }
+
+    });   
 }
 
-custoProduct();*/
-
-console.log(window.location.search);
+customizeYourProduct();

@@ -1,0 +1,29 @@
+.factory-name a{
+    text-decoration: none;
+    color: #000;
+}
+
+#customization-of-product{
+    display: flex;
+    padding: 150px 0;
+
+    #product-custo-image{
+        #product-image{
+            max-width: 100%;
+        }
+    }
+    
+    #product-custo-details{
+        display: flex;
+        flex-direction: column;
+        #product-name{
+            padding: 50px 0;
+        }
+        #lenses-select{
+            width: 15%;
+        }
+    } 
+
+}
+
+
