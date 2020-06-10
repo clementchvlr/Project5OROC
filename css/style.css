@@ -16,18 +16,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; }
-  #productsList #product {
+  #productsList #product-item {
     width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 30px; }
-    #productsList #product #product-name {
+    #productsList #product-item #product-name {
       padding: 10px 0; }
-    #productsList #product #product-image {
+    #productsList #product-item #product-image {
       max-width: 100%;
       margin: 5px; }
-    #productsList #product #product-price {
+    #productsList #product-item #product-price {
       padding: 10px 0; }
 
 .header .factory-name {
