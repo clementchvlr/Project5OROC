@@ -30,6 +30,14 @@ function addDescription ( section , id , description ) {
     return productDescription;
 }
 
+function addButtonBasket(section) {
+    var buttonBasket = document.createElement('button');
+    buttonBasket.id = 'button-basket';
+    buttonBasket.innerHTML = 'ajouter au panier';
+    section.appendChild(buttonBasket);
+    return buttonBasket;
+}
+
 function addLensesSelect( section, lensesChoice) {
     const lensesLabel = document.createElement('label');
     lensesLabel.htmlFor = 'lenses-select';
@@ -80,6 +88,7 @@ function buildProductToCustomize(section, src, name, price, description, lensesC
     addPrice(productToCustoDetails, 'product-price', price);
     addDescription(productToCustoDetails, 'product-description', description);
     addLensesSelect(productToCustoDetails, lensesChoice);
+    addButtonBasket(productToCustoDetails);
 
     section.appendChild(productToCustoImage);
     section.appendChild(productToCustoDetails);

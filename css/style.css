@@ -8,9 +8,12 @@
   height: 400px;
   background-color: red; }
 
-.btn-show {
+#button-basket {
   cursor: pointer;
-  padding: 10px; }
+  text-transform: uppercase;
+  padding: 5px 0;
+  margin: 40px 0;
+  width: 30%; }
 
 #productsList {
   display: flex;
