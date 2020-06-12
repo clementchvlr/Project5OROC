@@ -7,7 +7,7 @@ const showProducts = async function () {
 
     //fonction qui parcoure chaque élément de notre tableau de données
     products.forEach(element => {
-        buildProductInSell(productsList , 'product-in-sell' , element.imageUrl , element.name , element.price , element._id );
+        buildProductInSell(productsList , 'product-in-sell' , element.imageUrl , element.name , element.price, element._id );
     });   
 }
 

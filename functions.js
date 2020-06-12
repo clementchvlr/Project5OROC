@@ -16,7 +16,7 @@ function addName ( section , id , name ) {
 
 function addPrice ( section , id , price ) {
     var productPrice = document.createElement('h4');
-    productPrice.innerHTML = price + '€';
+    productPrice.innerHTML = price/100 + '€';
     productPrice.id = id;
     section.appendChild(productPrice);
     return productPrice;
@@ -31,7 +31,8 @@ function addDescription ( section , id , description ) {
 }
 
 function addButtonBasket(section) {
-    var buttonBasket = document.createElement('button');
+    var buttonBasket = document.createElement('a');
+    buttonBasket.href = 'basket.html';
     buttonBasket.id = 'button-basket';
     buttonBasket.innerHTML = 'ajouter au panier';
     section.appendChild(buttonBasket);
@@ -59,6 +60,29 @@ function addLensesSelect( section, lensesChoice) {
     section.appendChild(lensesOption);
 }
 
+function addQuantitySelect( section, number) {
+    const quantityLabel = document.createElement('label');
+    quantityLabel.htmlFor = 'quantity-select';
+    quantityLabel.innerHTML = 'Quantité';
+
+    const quantityOption = document.createElement('select');
+    quantityOption.name = 'quantity';
+    quantityOption.id = 'quantity-select';
+
+    for (let i = 1; i <= number  ; i++) {
+        var quantityId = document.createElement('option');
+        quantityId.value = 'option' + i;
+        quantityId.innerHTML = i;
+
+        quantityOption.appendChild(quantityId);
+      }
+
+    section.appendChild(quantityLabel);
+    section.appendChild(quantityOption);
+}
+
+
+
 function buildProductInSell (section, id, src, name, price, idProduct) {
     const productInSell = document.createElement('a');
     productInSell.href = 'customize.html?' + idProduct;
@@ -70,7 +94,6 @@ function buildProductInSell (section, id, src, name, price, idProduct) {
     addPrice(productInSell, 'product-price', price);
 
     section.appendChild(productInSell);
-
 }
 
 function buildProductToCustomize(section, src, name, price, description, lensesChoice) {
@@ -88,11 +111,50 @@ function buildProductToCustomize(section, src, name, price, description, lensesC
     addPrice(productToCustoDetails, 'product-price', price);
     addDescription(productToCustoDetails, 'product-description', description);
     addLensesSelect(productToCustoDetails, lensesChoice);
+    addQuantitySelect(productToCustoDetails, 10);
     addButtonBasket(productToCustoDetails);
 
     section.appendChild(productToCustoImage);
     section.appendChild(productToCustoDetails);
 
+}
+
+function showBasket(section, table){
+    var basketTitle = document.createElement('h5');
+    basketTitle.className = 'basket-title';
+    basketTitle.innerHTML = 'Mon panier';
+
+    section.appendChild(basketTitle);
+    
+    
+    if (table.length == 0){
+        const emptyBasket = document.createElement('div');
+        emptyBasket.innerHTML = 'votre panier est vide';
+        section.appendChild(emptyBasket);
+    } else {
+        for (let i=0; i<table.length; i++){
+            var productRecap = document.createElement('ul');
+            productRecap.id = 'product-recap';
+            for (let j=0; j<table[i].length; j++){
+                var productDetails = document.createElement('li');
+                productDetails.innerHTML = table[i][j];
+                productRecap.appendChild(productDetails);
+            }
+            section.appendChild(productRecap);
+        }
+    }
+
+    const linkToCancel = document.createElement('button');
+    linkToCancel.innerHTML = 'vider mon panier';
+    linkToCancel.id = 'link-to-cancel';
+
+    const linkToShop = document.createElement('a');
+    linkToShop.innerHTML = 'continuer mes achats';
+    linkToShop.href = 'index.html';
+    linkToShop.id = 'link-to-shop';
+
+    section.appendChild(linkToCancel);
+    section.appendChild(linkToShop);
 
 }
 
