@@ -116,7 +116,6 @@ function buildProductToCustomize(section, src, name, price, description, lensesC
 
     section.appendChild(productToCustoImage);
     section.appendChild(productToCustoDetails);
-
 }
 
 function showBasket(section, table){
@@ -158,7 +157,52 @@ function showBasket(section, table){
 
 }
 
+// function d'ajout du formulaire
+
+function addForm(section, id){
+
+    const formSend = document.createElement('form')
+    formSend.id = id;
+
+    const formFirstName = document.createElement('input');
+    formFirstName.type = 'text';
+    formFirstName.name = 'Prénom';
+    formFirstName.placeholder = 'Prénom';
+    formSend.appendChild(formFirstName);
+
+    const formName = document.createElement('input');
+    formName.type = 'text';
+    formFirstName.name = 'Nom';
+    formName.placeholder = 'Nom';
+    formSend.appendChild(formName);
+    
+    const formAdress = document.createElement('input');
+    formAdress.type = 'text';
+    formFirstName.name = 'Adresse';
+    formAdress.placeholder = 'Adresse';
+    formSend.appendChild(formAdress);
+
+    const formCity = document.createElement('input');
+    formCity.type = 'text';
+    formFirstName.name = 'Ville';
+    formCity.placeholder = 'Ville';
+    formSend.appendChild(formCity);
+
+    const formMail = document.createElement('input');
+    formMail.type = 'email';
+    formFirstName.name = 'Adresse électronique';
+    formMail.placeholder = 'Adresse électronique';
+    formSend.appendChild(formMail);
+
+    const submitBtn = document.createElement('input');
+    submitBtn.type = 'submit';
+    submitBtn.value = 'envoyer';
+    formSend.appendChild(submitBtn);
+
+
+    section.appendChild(formSend);
 
 
 
 
+}
