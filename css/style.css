@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap");
 * {
-  font-family: 'Inconsolata', monospace;
-  margin: 0;
-  padding: 0; }
+  font-family: 'Roboto Slab', serif; }
 
-.banniere {
-  height: 400px;
-  background-color: red; }
+.products-list-title {
+  padding-top: 25px;
+  color: #384F6E; }
 
 #button-basket {
   cursor: pointer;
@@ -16,29 +14,24 @@
   width: 30%; }
 
 #productsList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; }
+  border-top: 1px solid #000;
+  padding: 20px 0; }
   #productsList #product-in-sell {
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 35px 0 0 0;
-    margin: 30px 0;
-    text-decoration: none;
-    background-color: #f0f0f0;
-    box-shadow: 0px 0px 8px 5px rgba(242, 239, 242, 0.7); }
+    padding: 20px 5px;
+    text-decoration: none; }
+    #productsList #product-in-sell #product-image {
+      max-width: 100%; }
     #productsList #product-in-sell #product-name {
-      padding: 10px 0;
-      color: #000; }
+      color: #000;
+      margin: 0;
+      padding-top: 5px;
+      font-size: 1.4rem;
+      font-weight: 400; }
     #productsList #product-in-sell #product-price {
-      padding: 10px 0;
-      color: #000; }
-  #productsList .col-md-5 #product-image {
-    max-width: 100%; }
-  #productsList .col-xl-5 #product-image {
-    max-width: 80%; }
+      color: #000;
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 100; }
 
 .factory-name a {
   text-decoration: none;
@@ -57,28 +50,49 @@
     #customization-of-product #product-custo-details #lenses-select {
       width: 15%; }
 
-.header .factory-name {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 120px; }
-  .header .factory-name h1 {
-    font-size: 2rem; }
-  .header .factory-name h2 {
-    font-size: 1rem; }
-  @media screen and (max-width: 768px) {
-    .header .factory-name {
-      align-items: center; } }
-.header .nav-bar {
-  display: flex;
-  align-items: center; }
-  .header .nav-bar .nav {
+.header {
+  background-color: #BAA172; }
+  .header .factory-name {
     display: flex;
-    justify-content: space-around;
-    width: 100%; }
-    .header .nav-bar .nav .link-menu {
-      text-decoration: none;
-      color: black; }
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 0 40px 80px; }
+    .header .factory-name h1 {
+      font-size: 4rem; }
+    .header .factory-name h2 {
+      font-size: 1rem;
+      font-weight: 300; }
+    @media screen and (max-width: 768px) {
+      .header .factory-name {
+        align-items: center;
+        padding: 20px 0; } }
+    @media screen and (max-width: 768px) {
+      .header .factory-name a {
+        display: flex;
+        flex-direction: column;
+        align-items: center; } }
+  .header .nav-bar {
+    display: flex;
+    align-items: center;
+    padding: 20px 0; }
+    .header .nav-bar .nav {
+      display: flex;
+      justify-content: space-around;
+      width: 100%; }
+      .header .nav-bar .nav .link-menu {
+        text-decoration: none;
+        cursor: pointer;
+        color: #000; }
+
+.footer {
+  background-color: #BAA172;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0; }
+  .footer .footer-description {
+    margin: 0;
+    padding: 10px 0; }
 
 .main-container {
   padding: 0; }

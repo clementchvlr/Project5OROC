@@ -1,29 +1,41 @@
 .header{
+    background-color: $color-marron-light;
     .factory-name{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 120px;
+        padding: 40px 0 40px 80px;
         h1{
-            font-size: 2rem;
+            font-size: 4rem;
         }
         h2{
             font-size: 1rem;
+            font-weight: 300;
         }
         @include mobile-only{
             align-items: center;
+            padding: 20px 0;
+        }
+        a{
+            @include mobile-only{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }  
         }
     }
     .nav-bar{
             display: flex;
-            align-items: center;      
+            align-items: center; 
+            padding: 20px 0;     
         .nav{
             display: flex;
             justify-content: space-around;
             width: 100%;
             .link-menu{
                 text-decoration: none;
-                color: black;
+                cursor: pointer;
+                color: $color-black;
             }
         }
     }

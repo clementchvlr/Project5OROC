@@ -87,7 +87,7 @@ function buildProductInSell (section, id, src, name, price, idProduct) {
     const productInSell = document.createElement('a');
     productInSell.href = 'customize.html?' + idProduct;
     productInSell.id = id;
-    productInSell.classList.add("col-xl-5" , "col-md-5");
+    productInSell.classList.add("col-lg-4" , "col-md-6" , "col-sm-12");
 
     addImage(productInSell, 'product-image', src)
     addName(productInSell, 'product-name', name);

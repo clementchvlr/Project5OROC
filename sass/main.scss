@@ -2,12 +2,14 @@
 
 @import "utils/maps";
 @import "utils/mixins";
+@import "utils/colors";
 
-@import "components/banniere";
+@import "components/home";
 @import "components/buttons";
 @import "components/products";
 @import "components/product_custo";
 
 
 @import "layout/header";
+@import "layout/footer";
 @import "layout/container";
