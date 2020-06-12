@@ -14,7 +14,7 @@ const customizeYourProduct = async function () {
                 var lengthOfStorage = localStorage.length + 1;
                 var lensesSelect = document.getElementById("lenses-select").options[document.getElementById('lenses-select').selectedIndex].text;
                 var quantitySelect = document.getElementById("quantity-select").options[document.getElementById('quantity-select').selectedIndex].text;
-                var value = [element.name, lensesSelect, quantitySelect, (element.price/100) * quantitySelect + ' €'];
+                var value = [element.name, lensesSelect, quantitySelect + ' pièce(s)', (element.price/100) * quantitySelect + ' €'];
                 localStorage.setItem('produit' + lengthOfStorage , value);
             }
         } else {

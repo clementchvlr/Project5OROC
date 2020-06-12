@@ -5,8 +5,11 @@
 
 #customization-of-product{
     display: flex;
-    padding: 150px 0;
-
+    align-items: center;
+    padding-top: 20px ;
+    @include desktop-only{
+        flex-direction: column;
+    }
     #product-custo-image{
         #product-image{
             max-width: 100%;
@@ -17,10 +20,31 @@
         display: flex;
         flex-direction: column;
         #product-name{
-            padding: 50px 0;
+            font-size: 1.4rem;
+            font-weight: 400;
+            padding-top: 20px;
+        }
+        #product-price{
+            font-size: 1.2rem;
+            font-weight: 100;
+        }
+        #product-description{
+            font-weight: 200;
         }
         #lenses-select{
-            width: 15%;
+            width: 120px;
+        }
+        #quantity-select{
+            width: 120px;
+        }
+        label{
+            color: $color-blue-dark;
+            padding-top: 15px;
+        }
+        #button-basket{
+            text-decoration: none;
+            color: $color-marron-mid;
+            width: 250px;
         }
     } 
 

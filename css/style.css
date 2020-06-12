@@ -39,16 +39,83 @@
 
 #customization-of-product {
   display: flex;
-  padding: 150px 0; }
+  align-items: center;
+  padding-top: 20px; }
+  @media screen and (max-width: 1200px) {
+    #customization-of-product {
+      flex-direction: column; } }
   #customization-of-product #product-custo-image #product-image {
     max-width: 100%; }
   #customization-of-product #product-custo-details {
     display: flex;
     flex-direction: column; }
     #customization-of-product #product-custo-details #product-name {
-      padding: 50px 0; }
+      font-size: 1.4rem;
+      font-weight: 400;
+      padding-top: 20px; }
+    #customization-of-product #product-custo-details #product-price {
+      font-size: 1.2rem;
+      font-weight: 100; }
+    #customization-of-product #product-custo-details #product-description {
+      font-weight: 200; }
     #customization-of-product #product-custo-details #lenses-select {
-      width: 15%; }
+      width: 120px; }
+    #customization-of-product #product-custo-details #quantity-select {
+      width: 120px; }
+    #customization-of-product #product-custo-details label {
+      color: #384F6E;
+      padding-top: 15px; }
+    #customization-of-product #product-custo-details #button-basket {
+      text-decoration: none;
+      color: #6E572D;
+      width: 250px; }
+
+#product-basket {
+  display: flex;
+  flex-direction: column; }
+  #product-basket .basket-title {
+    padding: 15px 15px 15px 0;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+    width: 600px; }
+  #product-basket #product-recap {
+    display: flex;
+    justify-content: space-around; }
+    #product-basket #product-recap li {
+      list-style-type: none;
+      text-align: center;
+      width: 150px; }
+  #product-basket #link-to-cancel {
+    width: 200px;
+    background-color: #B5D5FF;
+    margin: 5px 0;
+    cursor: pointer; }
+  #product-basket #link-to-shop {
+    width: 200px;
+    background-color: #B5D5FF;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    border: 2px solid #000;
+    margin: 5px 0; }
+  #product-basket #empty-basket {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1.2rem;
+    font-weight: 300; }
+
+#total-account {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase; }
+
+#form-contact {
+  display: flex;
+  flex-direction: column; }
+  #form-contact input {
+    width: 60%;
+    margin: 15px auto; }
 
 .header {
   background-color: #BAA172; }
@@ -56,7 +123,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px 0 40px 80px; }
+    padding: 20px 0 20px 80px; }
     .header .factory-name h1 {
       font-size: 4rem; }
     .header .factory-name h2 {
@@ -92,7 +159,7 @@
   bottom: 0; }
   .footer .footer-description {
     margin: 0;
-    padding: 10px 0; }
+    padding: 5px 0; }
 
 .main-container {
   padding: 0; }

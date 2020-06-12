@@ -128,7 +128,8 @@ function showBasket(section, table){
     
     if (table.length == 0){
         const emptyBasket = document.createElement('div');
-        emptyBasket.innerHTML = 'votre panier est vide';
+        emptyBasket.id = 'empty-basket';
+        emptyBasket.innerHTML = 'Votre panier est vide.';
         section.appendChild(emptyBasket);
     } else {
         for (let i=0; i<table.length; i++){
