@@ -14,6 +14,17 @@
   margin: 40px 0;
   width: 30%; }
 
+#buttons {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0; }
+  #buttons .btn-basket {
+    border: 1px solid black;
+    padding: 0 20px;
+    margin: 0 20px;
+    text-decoration: none;
+    color: #000; }
+
 #productsList {
   border-top: 1px solid #000; }
   #productsList #product-in-sell {
@@ -40,7 +51,7 @@
 #customization-of-product {
   display: flex;
   align-items: center;
-  padding-top: 20px; }
+  padding-top: 130px; }
   @media screen and (max-width: 1200px) {
     #customization-of-product {
       flex-direction: column; } }

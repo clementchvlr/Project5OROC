@@ -119,12 +119,6 @@ function buildProductToCustomize(section, src, name, price, description, lensesC
 }
 
 function showBasket(section, table){
-    var basketTitle = document.createElement('h5');
-    basketTitle.className = 'basket-title';
-    basketTitle.innerHTML = 'Mon panier';
-
-    section.appendChild(basketTitle);
-    
     
     if (table.length == 0){
         const emptyBasket = document.createElement('div');
@@ -143,67 +137,4 @@ function showBasket(section, table){
             section.appendChild(productRecap);
         }
     }
-
-    const linkToCancel = document.createElement('button');
-    linkToCancel.innerHTML = 'vider mon panier';
-    linkToCancel.id = 'link-to-cancel';
-
-    const linkToShop = document.createElement('a');
-    linkToShop.innerHTML = 'continuer mes achats';
-    linkToShop.href = 'index.html';
-    linkToShop.id = 'link-to-shop';
-
-    section.appendChild(linkToCancel);
-    section.appendChild(linkToShop);
-
-}
-
-// function d'ajout du formulaire
-
-function addForm(section, id){
-
-    const formSend = document.createElement('form')
-    formSend.id = id;
-
-    const formFirstName = document.createElement('input');
-    formFirstName.type = 'text';
-    formFirstName.name = 'Prénom';
-    formFirstName.placeholder = 'Prénom';
-    formSend.appendChild(formFirstName);
-
-    const formName = document.createElement('input');
-    formName.type = 'text';
-    formFirstName.name = 'Nom';
-    formName.placeholder = 'Nom';
-    formSend.appendChild(formName);
-    
-    const formAdress = document.createElement('input');
-    formAdress.type = 'text';
-    formFirstName.name = 'Adresse';
-    formAdress.placeholder = 'Adresse';
-    formSend.appendChild(formAdress);
-
-    const formCity = document.createElement('input');
-    formCity.type = 'text';
-    formFirstName.name = 'Ville';
-    formCity.placeholder = 'Ville';
-    formSend.appendChild(formCity);
-
-    const formMail = document.createElement('input');
-    formMail.type = 'email';
-    formFirstName.name = 'Adresse électronique';
-    formMail.placeholder = 'Adresse électronique';
-    formSend.appendChild(formMail);
-
-    const submitBtn = document.createElement('input');
-    submitBtn.type = 'submit';
-    submitBtn.value = 'envoyer';
-    formSend.appendChild(submitBtn);
-
-
-    section.appendChild(formSend);
-
-
-
-
 }

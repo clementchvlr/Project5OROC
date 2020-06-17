@@ -13,18 +13,14 @@ function basketActualisation (){
             return 1;
         }
     });
-    console.log(basketArray)
     return basketArray
 }
 
 var monTableau = basketActualisation();
-console.log(monTableau);
-
 var totalAccount = 0;
 
 for (i = 0; i<monTableau.length; i++){
     totalAccount = totalAccount + parseInt(monTableau[i][3].slice(0, -2));
-    console.log(totalAccount);
 }
 
 const Account = document.getElementById('total-account');
@@ -38,7 +34,4 @@ const cancelBtn = document.getElementById('link-to-cancel');
 cancelBtn.onclick = function cancelBasket(productBasket){
     localStorage.clear();
     window.location.reload();
-}; 
-
-const form = document.getElementById('form');
-addForm(form, 'form-contact');
+};

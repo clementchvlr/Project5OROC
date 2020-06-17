@@ -31,19 +31,29 @@
 
         <section class="principal-body">
 
-            <section class="container-fluid" id="product-basket"> 
+            <section class="container-fluid" id="product-basket">
 
+                <h5 class="basket-title"> Mon panier </h5>
 
             </section>
-    
-            <div id="total-account">
-    
+
+            <div id="buttons">
+                <a href="basket.html" id="link-to-cancel" class="btn-basket"> vider mon panier </a>
+                <a href="index.html" class="btn-basket"> continuer mes achats </a>
             </div>
     
-            <section id="form">
-    
-            </section>
+            <div id="total-account"> </div>
 
+            <section id="form">
+                <form id="form-contact">
+                    <input type="text" name="prénom" placeholder="Prénom">
+                    <input type="text" name="nom" placeholder="Nom">
+                    <input type="text" name="Adresse" placeholder="Adresse">
+                    <input type="text" name="Ville" placeholder="Ville">
+                    <input type="email" name="Adresse électronique" placeholder="Adresse électronique">
+                    <input type="submit" value="envoyer">
+                </form>
+            </section>
 
         </section>
 
@@ -51,8 +61,6 @@
             <p class="footer-description"> <i class="far fa-copyright"></i> clement.c</p>
         </footer>
       
-        
-
     <script type="text/javascript" src="functions.js"></script>
     <script type="text/javascript" src="basket.js"></script>
 </body>

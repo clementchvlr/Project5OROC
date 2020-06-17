@@ -5,3 +5,16 @@
     margin: 40px 0;
     width: 30%;
 }
+
+#buttons{
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+    .btn-basket{
+        border: 1px solid black;
+        padding: 0 20px;
+        margin: 0 20px;
+        text-decoration: none;
+        color: $color-black;
+    }
+}

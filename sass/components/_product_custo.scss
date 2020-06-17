@@ -6,7 +6,7 @@
 #customization-of-product{
     display: flex;
     align-items: center;
-    padding-top: 20px ;
+    padding-top: 130px ;
     @include desktop-only{
         flex-direction: column;
     }
