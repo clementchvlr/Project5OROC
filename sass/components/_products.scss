@@ -3,17 +3,17 @@
     #product-in-sell{
         padding: 20px 5px;
         text-decoration: none;
-        #product-image{
+        #image-produit{
             max-width: 100%;
         }
-        #product-name{
+        #nom-produit{
             color: $color-black;
             margin: 0;
             padding-top: 5px;
             font-size: 1.4rem;
             font-weight: 400;
         }
-        #product-price{
+        #prix-produit{
             color: $color-black;
             margin: 0;
             font-size: 1.2rem;

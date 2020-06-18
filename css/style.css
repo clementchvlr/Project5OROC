@@ -30,15 +30,15 @@
   #productsList #product-in-sell {
     padding: 20px 5px;
     text-decoration: none; }
-    #productsList #product-in-sell #product-image {
+    #productsList #product-in-sell #image-produit {
       max-width: 100%; }
-    #productsList #product-in-sell #product-name {
+    #productsList #product-in-sell #nom-produit {
       color: #000;
       margin: 0;
       padding-top: 5px;
       font-size: 1.4rem;
       font-weight: 400; }
-    #productsList #product-in-sell #product-price {
+    #productsList #product-in-sell #prix-produit {
       color: #000;
       margin: 0;
       font-size: 1.2rem;
@@ -55,31 +55,29 @@
   @media screen and (max-width: 1200px) {
     #customization-of-product {
       flex-direction: column; } }
-  #customization-of-product #product-custo-image #product-image {
+  #customization-of-product #detail-produit-image #image-produit {
     max-width: 100%; }
-  #customization-of-product #product-custo-details {
+  #customization-of-product #detail-produit-caracteristique {
     display: flex;
     flex-direction: column; }
-    #customization-of-product #product-custo-details #product-name {
+    #customization-of-product #detail-produit-caracteristique #nom-produit {
       font-size: 1.4rem;
       font-weight: 400;
       padding-top: 20px; }
-    #customization-of-product #product-custo-details #product-price {
+    #customization-of-product #detail-produit-caracteristique #prix-produit {
       font-size: 1.2rem;
       font-weight: 100; }
-    #customization-of-product #product-custo-details #product-description {
+    #customization-of-product #detail-produit-caracteristique #description-produit {
       font-weight: 200; }
-    #customization-of-product #product-custo-details #lenses-select {
+    #customization-of-product #detail-produit-caracteristique #selection-lentille {
       width: 120px; }
-    #customization-of-product #product-custo-details #quantity-select {
+    #customization-of-product #detail-produit-caracteristique #selectipn-quantite {
       width: 120px; }
-    #customization-of-product #product-custo-details label {
+    #customization-of-product #detail-produit-caracteristique label {
       color: #384F6E;
       padding-top: 15px; }
-    #customization-of-product #product-custo-details #button-basket {
-      text-decoration: none;
-      color: #6E572D;
-      width: 250px; }
+    #customization-of-product #detail-produit-caracteristique #ajout-panier {
+      margin-top: 10px; }
 
 #product-basket {
   display: flex;
@@ -128,6 +126,40 @@
   #form-contact input {
     width: 60%;
     margin: 15px auto; }
+
+#pop-up-fond {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center; }
+  #pop-up-fond #pop-up-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 150px;
+    background-color: #fff;
+    opacity: 1;
+    border-radius: 5px;
+    position: relative; }
+    #pop-up-fond #pop-up-message a {
+      text-decoration: none;
+      color: #7292BB; }
+    #pop-up-fond #pop-up-message .pop-up-content {
+      color: #6E572D; }
+    #pop-up-fond #pop-up-message #pop-up-close {
+      position: absolute;
+      top: -1px;
+      right: 10px;
+      font-size: 1.6rem;
+      transform: rotate(45deg);
+      cursor: pointer; }
 
 .header {
   background-color: #BAA172; }
