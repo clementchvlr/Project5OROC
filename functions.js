@@ -1,3 +1,5 @@
+// --------------------- page d'index --------------------- //
+
 //fonction d'ajout d'une image
 function addImageProduit (section, source) {
     var productImage = document.createElement('img');
@@ -34,6 +36,26 @@ function buildProductInSell (section, nomProduit, source, nom, prix) {
     section.appendChild(productInSell);
 }
 
+// --------------------- page de détails produit --------------------- //
+
+// fonction permettant d'ajouter des éléments HTML <option> à un <select>
+function creationOption(section, lenses, value){
+    const option = document.createElement('option');
+    option.innerHTML = lenses;
+    option.value = value;
+    section.appendChild(option);
+}
+
+function fermerPopUp(){
+    document.getElementById('pop-up-fond').style.display = 'none';
+}
+
+function afficherPopUp(){
+    document.getElementById('pop-up-fond').style.display = 'flex';
+}
+
+// --------------------- page du panier --------------------- //
+
 function showBasket(section, table){
     if (table.length == 0){
         const emptyBasket = document.createElement('div');
@@ -52,20 +74,4 @@ function showBasket(section, table){
             section.appendChild(productRecap);
         }
     }
-}
-
-// fonction permettant d'ajouter des éléments HTML <option> à un <select>
-function creationOption(section, lenses, value){
-    const option = document.createElement('option');
-    option.innerHTML = lenses;
-    option.value = value;
-    section.appendChild(option);
-}
-
-function fermerPopUp(){
-    document.getElementById('pop-up-fond').style.display = 'none';
-}
-
-function afficherPopUp(){
-    document.getElementById('pop-up-fond').style.display = 'flex';
 }

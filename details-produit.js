@@ -28,14 +28,51 @@ const customizeYourProduct = async function () {
             //ajout du produit souhaité dans le panier
             const panierBouton = document.getElementById ('ajout-panier');
             panierBouton.onclick = function addToBasket() {
-                const longueurStorage = localStorage.length + 1;
-                const lentilleChoisie = document.getElementById('selection-lentille').options[document.getElementById('selection-lentille').selectedIndex].text;
-                const quantiteChoisie = document.getElementById('selection-quantite').options[document.getElementById('selection-quantite').selectedIndex].text;
-                const donneesProduit  = [element.name, lentilleChoisie, quantiteChoisie + ' pièce(s)', (element.price/100) * quantiteChoisie + ' €'];
-                localStorage.setItem('produit' + longueurStorage, donneesProduit);
-                afficherPopUp();
                 
-                //test si produit déjà existant
+                const longueurStorage = localStorage.length + 1;
+                
+                //récupération de la lentille choisie
+                const lentilleChoisie = document.getElementById('selection-lentille').options[document.getElementById('selection-lentille').selectedIndex].text;
+                
+                //récupération de la quantité choisie
+                const quantiteChoisie = document.getElementById('selection-quantite').options[document.getElementById('selection-quantite').selectedIndex].text;
+                
+                //stockage des données choisies dans un tableau 
+                const donneesProduit  = [element.name, lentilleChoisie, quantiteChoisie + ' pièce(s)', (element.price/100) * quantiteChoisie + ' €'];
+                
+                localStorage.setItem('produit' + longueurStorage, donneesProduit);
+                
+                //parcours du local storage pour voir si un produit similaire est déjà présent 
+                /*if(localStorage.length !== 0 ){
+
+                    for (i = 1 ; i <= localStorage.length ; i++){
+
+                        const donneesSeparees = localStorage.getItem('produit' + i).split(',');
+
+
+                        //console.log(donneesSeparees);
+    
+                        if ( (element.name === donneesSeparees[0]) && (lentilleChoisie === donneesSeparees[1]) ){
+                            
+                            console.log(donneesProduit[2]);
+                            console.log(parseInt(donneesProduit[2].slice(0, -9)));
+                            console.log(quantiteChoisie);
+                            donneesProduit[2] = (parseInt(donneesProduit[2].slice(0, -9)) + parseInt(quantiteChoisie)) + ' pièce(s)';
+                            
+                            
+                            localStorage.setItem('produit' + longueurStorage, donneesProduit);
+                            console.log('vous avez déjà un produit comme celui ci');
+                            break;
+                            
+                        }
+                    }
+
+                } else {
+                    
+                }*/
+
+                afficherPopUp();
+                  
             }
         }
     });
