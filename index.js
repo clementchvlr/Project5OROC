@@ -1,8 +1,15 @@
 //requête http effectué à l'aide de fetch et d'une fonction asynchrone
 const showProducts = async function () {
-    var getProducts = await fetch('http://localhost:3000/api/cameras');
-    var products = await getProducts.json();
+    const url = 'http://localhost:3000/api/cameras';
+    var getProducts = await fetch(url)
+        .then(function(response){
+            return response;
+        })
+        .catch(function(error){
+            console.log(error);
+        });
 
+    var products = await getProducts.json();
     var productsList = document.getElementById('productsList');
 
     //fonction qui parcoure chaque élément de notre tableau de données
@@ -10,7 +17,7 @@ const showProducts = async function () {
 
         //construction d'un produit en vente
         buildProductInSell(productsList, element.name, element.imageUrl, element.name, element.price);
-    });   
+    }); 
 }
 
 showProducts();

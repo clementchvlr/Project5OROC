@@ -12,6 +12,8 @@ const customizeYourProduct = async function () {
         const prixProduit = document.getElementById('prix-produit');
         const descriptionProduit = document.getElementById('description-produit');
         const lentilleSelection = document.getElementById('selection-lentille'); 
+        
+        
 
         //test de correspondance sur l'url de la page concernée pour afficher le produit sélectionné
         if ( '?' + element.name.replace(/ /g, '%20') == window.location.search) {
@@ -27,9 +29,12 @@ const customizeYourProduct = async function () {
 
             //ajout du produit souhaité dans le panier
             const panierBouton = document.getElementById ('ajout-panier');
-            panierBouton.onclick = function addToBasket() {
-                
-                const longueurStorage = localStorage.length + 1;
+            const produitPourPanier = 
+            panierBouton.onclick = function addToBasket(/* productId*/) {
+
+                // envoyer un id en paramètre, parser le localstorage, checker si l'élement existe ou pas (products[productId])
+                // si il existe pas, l'ajouter
+                // si il existe, 
                 
                 //récupération de la lentille choisie
                 const lentilleChoisie = document.getElementById('selection-lentille').options[document.getElementById('selection-lentille').selectedIndex].text;
@@ -37,10 +42,15 @@ const customizeYourProduct = async function () {
                 //récupération de la quantité choisie
                 const quantiteChoisie = document.getElementById('selection-quantite').options[document.getElementById('selection-quantite').selectedIndex].text;
                 
-                //stockage des données choisies dans un tableau 
+                //stockage des données choisies dans un tableau
+
+                productsDansPanier = [];
+                productsDansPanier = productsDansPanier.p[JSON.stringify(element)];
+                console.log(productsDansPanier)
+                localStorage.setItem('products', productsDansPanier);
                 const donneesProduit  = [element.name, lentilleChoisie, quantiteChoisie + ' pièce(s)', (element.price/100) * quantiteChoisie + ' €'];
                 
-                localStorage.setItem('produit' + longueurStorage, donneesProduit);
+                //localStorage.setItem('produit' + longueurStorage, donneesProduit);
                 
                 //parcours du local storage pour voir si un produit similaire est déjà présent 
                 /*if(localStorage.length !== 0 ){

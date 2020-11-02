@@ -1,4 +1,4 @@
-function basketActualisation (){
+/*function basketActualisation (){
     var basketArray = [];
     for ( i = 1 ; i <= localStorage.length ; i++ ) {    
         var productValue = localStorage.getItem('produit' + i);
@@ -34,4 +34,15 @@ const cancelBtn = document.getElementById('link-to-cancel');
 cancelBtn.onclick = function cancelBasket(productBasket){
     localStorage.clear();
     window.location.reload();
-};
+};*/
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    console.log('Nom:', e.target.firstname.value)
+    console.log('Prénom:', e.target.name.value)
+    console.log('Email:', e.target.adress.value)
+    console.log('Message:', e.target.city.value)
+    console.log('Message:', e.target.email.value)
+});

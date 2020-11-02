@@ -2,11 +2,10 @@
     text-decoration: none;
     color: #000;
 }
-
 #customization-of-product{
     display: flex;
     align-items: center;
-    padding-top: 130px;
+    padding-top: 30px;
     @include desktop-only{
         flex-direction: column;
     }
@@ -15,7 +14,6 @@
             max-width: 100%;
         }
     }
-    
     #detail-produit-caracteristique{
         display: flex;
         flex-direction: column;

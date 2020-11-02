@@ -43,12 +43,13 @@
             <div id="total-account"> </div>
 
             <section id="form">
-                <form id="form-contact">
-                    <input type="text" name="prénom" placeholder="Prénom">
-                    <input type="text" name="nom" placeholder="Nom">
-                    <input type="text" name="Adresse" placeholder="Adresse">
-                    <input type="text" name="Ville" placeholder="Ville">
-                    <input type="email" name="Adresse électronique" placeholder="Adresse électronique">
+                <form id="form-contact" action="" method="POST">
+                    <input type="text" name="firstname" placeholder="Prénom *" pattern="^\D*$" required>
+                    <input type="text" name="name" placeholder="Nom *" pattern="^\D*$" required>
+                    <input type="text" name="adress" placeholder="Adresse *" required>
+                    <input type="text" name="city" placeholder="Ville *" required>
+                    <input type="email" name="email" placeholder="Adresse électronique *" required>
+                    <!-- ajouter l'emploi -->
                     <input type="submit" value="envoyer">
                 </form>
             </section>
