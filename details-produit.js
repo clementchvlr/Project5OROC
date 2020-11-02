@@ -1,12 +1,17 @@
 //récupération des données de l'API et traitement afin d'afficher la page de personnalisation du produit sélectionné
 const customizeYourProduct = async function () {
     const url = 'http://localhost:3000/api/cameras';
+    const custoProduct = document.getElementById('customization-of-product');
     const getProducts = await fetch(url)
         .then(function(response){
-            return response;
+            if (response.ok){
+                return response
+            } else {
+                custoProduct.innerHTML = 'erreur 404';
+            }
         })
         .catch(function(error){
-            console.log(error);
+            custoProduct.innerHTML = 'erreur de type ' + error.message + ' lors de la requête HTTP';
         });
 
     var products = await getProducts.json();

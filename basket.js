@@ -33,3 +33,6 @@ buttonEmptyBasket.onclick = function () {
     localStorage.clear();
     window.location.reload();
 };
+
+var sentContact = new contact("bonjour","bonjour","bonjour","bonjour");
+console.log(sentContact);

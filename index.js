@@ -2,21 +2,22 @@
 const showProducts = async function () {
     
     const url = 'http://localhost:3000/api/cameras';
+    const productsList = document.getElementById('productsList');
     
     var getProducts = await fetch(url)
         .then(function(response){
             if (response.ok){
                 return response
             } else {
-                console.log(response.status)
+                productsList.innerHTML = 'erreur 404';
             }
         })
         .catch(function(error){
-            console.log(error);
+            productsList.innerHTML = 'erreur de type ' + error.message + ' lors de la requête HTTP';
         });
 
     const products = await getProducts.json();
-    const productsList = document.getElementById('productsList');
+    
 
     //fonction qui parcoure chaque élément de notre tableau de données
     products.forEach(element => {

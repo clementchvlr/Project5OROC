@@ -75,3 +75,12 @@ function showBasket(section, table){
         }
     }
 }
+
+// création d'un objet contact
+
+function contact(firstname, name, city, email){
+    this.firstname = firstname;
+    this.name = name;
+    this.city = city;
+    this.email = email;
+}
