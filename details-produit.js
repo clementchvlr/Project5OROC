@@ -1,6 +1,15 @@
 //récupération des données de l'API et traitement afin d'afficher la page de personnalisation du produit sélectionné
 const customizeYourProduct = async function () {
-    var getProducts = await fetch('http://localhost:3000/api/cameras');
+    const url = 'http://localhost:3000/api/cameras';
+
+    const getProducts = await fetch(url)
+        .then(function(response){
+            return response;
+        })
+        .catch(function(error){
+            console.log(error);
+        });
+
     var products = await getProducts.json();
     
     //travail sur chaque élément du tableau de données
@@ -27,64 +36,56 @@ const customizeYourProduct = async function () {
                 creationOption(lentilleSelection, element.lenses[i], 'lentille' + i);
             }
 
-            //ajout du produit souhaité dans le panier
-            const panierBouton = document.getElementById ('ajout-panier');
-            const produitPourPanier = 
-            panierBouton.onclick = function addToBasket(/* productId*/) {
+            
+            // ESSAI
+            const buttonBasket = document.getElementById('ajout-panier');
 
-                // envoyer un id en paramètre, parser le localstorage, checker si l'élement existe ou pas (products[productId])
-                // si il existe pas, l'ajouter
-                // si il existe, 
-                
-                //récupération de la lentille choisie
-                const lentilleChoisie = document.getElementById('selection-lentille').options[document.getElementById('selection-lentille').selectedIndex].text;
-                
-                //récupération de la quantité choisie
-                const quantiteChoisie = document.getElementById('selection-quantite').options[document.getElementById('selection-quantite').selectedIndex].text;
-                
-                //stockage des données choisies dans un tableau
+            buttonBasket.onclick = function ajouterAuPanier () {
+            //récupération du nom
+            const nameProduct = document.getElementById('nom-produit').textContent;
+            //récupération du prix
+            const priceProduct = document.getElementById('prix-produit').textContent;
+            //récupération de la lentille choisie
+            const lentilleChoisie = document.getElementById('selection-lentille').options[document.getElementById('selection-lentille').selectedIndex].text;
+            //récupération de la quantité choisie
+            const quantiteChoisie = document.getElementById('selection-quantite').options[document.getElementById('selection-quantite').selectedIndex].text;
+            // définition du produit choisi
+            const myProductChoose = Object.fromEntries([['nom',nameProduct], ['prix', priceProduct],['quantité', quantiteChoisie], ['lentille',lentilleChoisie]]);
+        
+            if (parseInt(myProductChoose.quantité) === 1) {
+                alert( myProductChoose.quantité + ' appareil ' + myProductChoose.nom + ', avec une lentille "' + myProductChoose.lentille + '" a été ajouté à votre panier!');
+            } else {
+                alert( myProductChoose.quantité + ' appareils ' + myProductChoose.nom + ', avec une lentille "' + myProductChoose.lentille + '" ont été ajoutés à votre panier!');
+            };
 
-                productsDansPanier = [];
-                productsDansPanier = productsDansPanier.p[JSON.stringify(element)];
-                console.log(productsDansPanier)
-                localStorage.setItem('products', productsDansPanier);
-                const donneesProduit  = [element.name, lentilleChoisie, quantiteChoisie + ' pièce(s)', (element.price/100) * quantiteChoisie + ' €'];
-                
-                //localStorage.setItem('produit' + longueurStorage, donneesProduit);
-                
-                //parcours du local storage pour voir si un produit similaire est déjà présent 
-                /*if(localStorage.length !== 0 ){
+            let items = [];
 
-                    for (i = 1 ; i <= localStorage.length ; i++){
-
-                        const donneesSeparees = localStorage.getItem('produit' + i).split(',');
+            if (localStorage.length === 0) {
+                items.push(myProductChoose);
+                localStorage.setItem('items', JSON.stringify(items));
 
 
-                        //console.log(donneesSeparees);
-    
-                        if ( (element.name === donneesSeparees[0]) && (lentilleChoisie === donneesSeparees[1]) ){
-                            
-                            console.log(donneesProduit[2]);
-                            console.log(parseInt(donneesProduit[2].slice(0, -9)));
-                            console.log(quantiteChoisie);
-                            donneesProduit[2] = (parseInt(donneesProduit[2].slice(0, -9)) + parseInt(quantiteChoisie)) + ' pièce(s)';
-                            
-                            
-                            localStorage.setItem('produit' + longueurStorage, donneesProduit);
-                            console.log('vous avez déjà un produit comme celui ci');
-                            break;
-                            
-                        }
-                    }
+            } else {
+                var localItems = JSON.parse(localStorage.getItem('items'));
+                var check = false;
 
-                } else {
+                for ( i = 0 ; i <= localItems.length - 1 ; i++ ) {                    
+                    if ( localItems[i].nom === myProductChoose.nom && localItems[i].lentille === myProductChoose.lentille ) {
                     
-                }*/
+                        quantityNumb = parseInt(localItems[i].quantité);
+                        quantityNumb = quantityNumb + parseInt(myProductChoose.quantité);
+                        localItems[i].quantité = quantityNumb.toString();
+                        localStorage.setItem('items', JSON.stringify(localItems));
+                        check = true;
+                    }
+                }
 
-                afficherPopUp();
-                  
-            }
-        }
-    });
+                if ( check === false ) {
+                    localItems.push(myProductChoose);
+                    localStorage.setItem('items', JSON.stringify(localItems));
+                }      
+            };
+        };
+    }});
 }
 customizeYourProduct();
