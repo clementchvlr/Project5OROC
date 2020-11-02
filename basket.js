@@ -1,48 +1,35 @@
-/*function basketActualisation (){
-    var basketArray = [];
-    for ( i = 1 ; i <= localStorage.length ; i++ ) {    
-        var productValue = localStorage.getItem('produit' + i);
-        var productItem = productValue.split(',');
-        basketArray.push(productItem);
-    }
-    basketArray.sort(function(a,b){
-        if (a < b){
-            return -1;
-        }
-        if (a > b ){
-            return 1;
-        }
-    });
-    return basketArray
+/* déclaration des variables utiles au script */
+var localItems = JSON.parse(localStorage.getItem('items'));
+var sectionBasket = document.getElementById('product-basket');
+var monTableau = [];
+var totalAmount = 0;
+
+/* construction du tableau de produits commandés en fonction du localStorage */
+if (localStorage.length === 0) {
+    var emptyBasket = document.createElement('p');
+    emptyBasket.innerHTML = 'votre panier est vide';
+    sectionBasket.appendChild(emptyBasket);
+} else {
+    for ( i = 0 ; i <= localItems.length - 1 ; i++ ) {
+        var quantityArray = parseInt(localItems[i].quantité);
+        var priceArray =  parseInt(localItems[i].prix.replace(' €', ''));
+        var priceProduct = quantityArray * priceArray;              
+        monTableau.push([localItems[i].nom,localItems[i].lentille, quantityArray, priceProduct + ' €']);
+        totalAmount = totalAmount + priceProduct;
+    }    
 }
 
-var monTableau = basketActualisation();
-var totalAccount = 0;
+// affichage du tableau trié
+monTableau.sort();
+showBasket(sectionBasket, monTableau);
 
-for (i = 0; i<monTableau.length; i++){
-    totalAccount = totalAccount + parseInt(monTableau[i][3].slice(0, -2));
-}
+// affichage du prix total de la commande
+var amountHTML = document.getElementById('total-account');
+amountHTML.innerHTML = totalAmount + ' €';
 
-const Account = document.getElementById('total-account');
-Account.innerHTML = 'montant total: ' + totalAccount + ' €';
-
-var productBasket = document.getElementById('product-basket');
-
-showBasket(productBasket, monTableau);
-
-const cancelBtn = document.getElementById('link-to-cancel');
-cancelBtn.onclick = function cancelBasket(productBasket){
+// gestion du bouton vider mon panier 
+var buttonEmptyBasket = document.getElementById('link-to-cancel');
+buttonEmptyBasket.onclick = function () {
     localStorage.clear();
     window.location.reload();
-};*/
-
-const form = document.querySelector('form');
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    console.log('Nom:', e.target.firstname.value)
-    console.log('Prénom:', e.target.name.value)
-    console.log('Email:', e.target.adress.value)
-    console.log('Message:', e.target.city.value)
-    console.log('Message:', e.target.email.value)
-});
+};

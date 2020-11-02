@@ -1,7 +1,6 @@
 //récupération des données de l'API et traitement afin d'afficher la page de personnalisation du produit sélectionné
 const customizeYourProduct = async function () {
     const url = 'http://localhost:3000/api/cameras';
-
     const getProducts = await fetch(url)
         .then(function(response){
             return response;
@@ -22,8 +21,6 @@ const customizeYourProduct = async function () {
         const descriptionProduit = document.getElementById('description-produit');
         const lentilleSelection = document.getElementById('selection-lentille'); 
         
-        
-
         //test de correspondance sur l'url de la page concernée pour afficher le produit sélectionné
         if ( '?' + element.name.replace(/ /g, '%20') == window.location.search) {
             imageProduit.src = element.imageUrl;
@@ -36,8 +33,6 @@ const customizeYourProduct = async function () {
                 creationOption(lentilleSelection, element.lenses[i], 'lentille' + i);
             }
 
-            
-            // ESSAI
             const buttonBasket = document.getElementById('ajout-panier');
 
             buttonBasket.onclick = function ajouterAuPanier () {
@@ -63,8 +58,6 @@ const customizeYourProduct = async function () {
             if (localStorage.length === 0) {
                 items.push(myProductChoose);
                 localStorage.setItem('items', JSON.stringify(items));
-
-
             } else {
                 var localItems = JSON.parse(localStorage.getItem('items'));
                 var check = false;
